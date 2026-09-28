@@ -1,0 +1,46 @@
+/* Motion edition: precise red accents, generous typography, quiet movement. */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 80% 10%,#392025 0,transparent 55%),#111315}
+.hero:before{content:'';position:absolute;z-index:-1;inset:0;background:repeating-linear-gradient(115deg,transparent 0 90px,#ffffff04 91px 92px);mask-image:linear-gradient(90deg,transparent,#000)}
+.hero:after{content:'';position:absolute;left:-10%;bottom:0;width:120%;height:3px;background:linear-gradient(90deg,transparent 15%,#f52c36 50%,transparent 85%);transform-origin:left;animation:ignition 1.4s cubic-bezier(.16,1,.3,1) both}
+.hero h1{font-size:clamp(44px,5.2vw,70px);letter-spacing:-.055em;line-height:1.04}
+.hero h1 span{color:#f14b52}.hero-layout{gap:64px;padding-top:70px;padding-bottom:70px}
+.start-card{border-radius:16px;box-shadow:0 24px 70px #0005;border-top:3px solid #ef343c}
+.button{border-radius:7px;transition:background .2s,transform .25s,box-shadow .25s}
+.button:hover{transform:translateY(-3px);box-shadow:0 8px 24px #e5252b30}.button:active{transform:translateY(0)}
+.button>span,.service-more>span{transition:transform .25s}.button:hover>span,.service:hover .service-more>span{transform:translateX(5px)}
+nav a{position:relative}nav a:after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:2px;background:#ef343c;transform:scaleX(0);transform-origin:left;transition:transform .25s}nav a:hover:after,nav a:focus-visible:after{transform:scaleX(1)}
+.service{border-radius:12px;background:#f8f8f9;transition:transform .3s,border-color .3s,box-shadow .3s}.service:hover{transform:translateY(-6px);box-shadow:0 18px 36px #17191c10}.service-number{font-size:15px}.service-more{font-size:12px}
+.booking-card{border-radius:16px}.about{background:#f0f1f3}.principles article{transition:border-color .3s}.principles article:hover{border-color:#df252b}
+.motion-reveal{opacity:1;transform:none}.motion-reveal.is-waiting{opacity:0;transform:translateY(24px)}.motion-reveal.is-visible{animation:reveal-in .7s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--reveal-delay,0ms)}
+.hero-heading .eyebrow{animation:reveal-in .65s both}.hero h1{animation:reveal-in .85s .08s both}.hero-description,.hero-rating{animation:reveal-in .85s .18s both}.start-card{animation:reveal-in .9s .25s both}
+@keyframes reveal-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ignition{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+@media(max-width:740px){.hero-layout{gap:30px;padding-top:38px;padding-bottom:38px}.hero h1{font-size:clamp(40px,10.7vw,58px)}.start-card{border-radius:12px}.service:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){html:not([data-motion="on"]) *,html:not([data-motion="on"]) *:before,html:not([data-motion="on"]) *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html:not([data-motion="on"]) .motion-reveal.is-waiting{opacity:1;transform:none}}
+/* Automotive details: lane markings, instrument numerals and a service route. */
+.hero:after{height:7px;left:0;width:100%;background:repeating-linear-gradient(90deg,#ef343c 0 64px,transparent 64px 104px);animation:road-flow 4s linear infinite;opacity:.8}
+@keyframes road-flow{from{background-position:0 0}to{background-position:104px 0}}
+.service-number{font-family:Consolas,monospace;font-size:25px;line-height:1;letter-spacing:-2px;border:0;padding:10px 0 10px 14px;border-left:3px solid var(--red);background:repeating-linear-gradient(0deg,transparent 0 5px,#df252b30 5px 6px) left center/6px 100% no-repeat;transition:padding .3s}
+.service:hover .service-number{padding-left:21px}
+.booking ol{position:relative}.booking li{position:relative}.booking li:not(:last-child):after{content:'';position:absolute;left:14px;top:37px;height:calc(100% - 12px);border-left:1px dashed #777b83}.booking li>span{background:#181a1d;border:2px solid #e94049;font-family:Consolas,monospace}
+.motion-toggle{display:block;margin-top:23px;border:1px solid #ffffff35;border-radius:30px;background:#ffffff08;color:#c3c6cb;padding:9px 13px;font:500 12px Manrope,Arial,sans-serif;cursor:pointer}.motion-toggle:hover{border-color:#ef343c;color:white}.motion-toggle:focus-visible{outline:3px solid #2b83ec;outline-offset:3px}
+html[data-motion="off"] *,html[data-motion="off"] *:before,html[data-motion="off"] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html[data-motion="off"] .is-waiting{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html:not([data-motion="on"]) .hero:after{animation:none}}
+@media(prefers-reduced-motion:reduce){html[data-motion="on"] .service,html[data-motion="on"] .button{transition:transform .3s,border-color .3s,box-shadow .3s!important}}
+/* Flyer-inspired car composition. */
+.hero{background:#050505}.hero:before{display:none}.hero:after{height:3px;background:#f21925;animation:ignition 1.4s both}
+.car-visual{position:absolute;top:0;right:-4%;width:62%;height:100%;overflow:hidden;z-index:-1;border-left:0;border-radius:48% 0 0 20%;background:#060606}
+.car-visual img{height:100%;width:100%;object-fit:cover;object-position:66% center;opacity:.85;animation:car-arrival 1.4s cubic-bezier(.16,1,.3,1) both}
+.hero-layout{grid-template-columns:1fr 1fr;gap:40px;align-items:start;padding-top:55px;padding-bottom:55px}
+.hero-heading{grid-column:1}.hero h1{font-size:clamp(43px,4.8vw,65px)}.hero-description{color:#ddd}.hero-rating{margin-top:22px}
+.start-card{grid-column:1;max-width:490px;background:#141414;color:white;border:1px solid #444;border-top:3px solid #f21925;border-radius:6px;padding:23px;margin-top:0;box-shadow:none}
+.start-card h2{font-size:24px}.start-card h2 br{display:none}.start-card>.eyebrow,.start-card>p:not(.eyebrow),.start-note{display:none}.start-card label{margin-top:16px;color:#ccc}.start-card .quote-link{color:#ddd}.start-card select{background:#fff;color:#17191c}
+.service{border-radius:4px;border-bottom:3px solid #e5252b}.service-number{color:#e5252b}.booking{background:#080808}.booking li>span{background:#080808}
+@keyframes car-arrival{from{transform:scale(1.08);opacity:0}to{transform:scale(1);opacity:.85}}
+@media(max-width:740px){.hero-layout{display:block;padding-top:32px}.car-visual{top:0;right:0;width:100%;height:290px;border-left:0;border-bottom:4px solid #ef1724;border-radius:0;position:relative;z-index:0}.car-visual img{object-position:65% 55%;opacity:1}.hero h1{font-size:43px}.start-card{margin-top:28px;max-width:none}.hero:after{display:none}}
+/* Compact hero and a dedicated booking strip. */
+.hero-layout{min-height:470px;padding-top:46px;padding-bottom:38px;align-items:center}.hero-heading{max-width:510px}.car-visual{width:57%;right:0}.car-visual img{object-position:61% center}.hero h1{font-size:clamp(42px,4.5vw,62px)}
+.booking-strip{background:#141414;border-bottom:1px solid #ffffff16}.booking-strip .start-card{display:grid;grid-template-columns:1fr 1.05fr 1fr;align-items:center;column-gap:28px;row-gap:12px;max-width:none;margin:0;padding:25px 0;border:0;border-radius:0;animation:none}.booking-strip h2{font-size:25px;line-height:1.15;max-width:210px}.booking-strip .quick-field label{margin:0 0 8px;font-size:13px}.booking-strip select{min-height:48px}.booking-strip .button{margin-top:22px;min-height:48px;justify-content:space-between}.booking-strip .quote-link{grid-column:2/4;margin:0;font-size:12px}.booking-strip .start-note{display:none}.hero-description{font-size:16px}.service small{font-size:14px}.service-more{font-size:13px}
+@media(max-width:1000px) and (min-width:741px){.hero h1{font-size:43px}.hero-layout{grid-template-columns:1.1fr 1fr}.booking-strip .start-card{gap:18px}.booking-strip h2{font-size:22px}.booking-strip .button{font-size:12px;padding:14px}.car-visual{width:54%}}
+@media(max-width:740px){.hero-layout{min-height:0;position:relative;padding-top:32px;padding-bottom:29px}.hero-heading{max-width:none}.car-visual{position:absolute;height:100%;width:100%;right:0;top:0;border:0;border-radius:0;z-index:-1;opacity:.4}.car-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#050505 5%,#050505b0 65%,#05050555)}.car-visual img{object-position:62% center}.hero h1{font-size:clamp(39px,10vw,52px)}.hero-description{font-size:15px}.hero-rating{margin-top:20px}.motion-toggle{margin-top:20px}.booking-strip .start-card{grid-template-columns:1fr;gap:14px;padding:25px 0}.booking-strip h2{max-width:none;font-size:25px}.booking-strip .button{margin:0;font-size:14px}.booking-strip .quote-link{grid-column:auto;line-height:1.6}.service small{font-size:13px}}
+
