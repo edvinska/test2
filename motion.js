@@ -4,7 +4,7 @@ let revealObserver;
 let motionEnabled=!motionPreference.matches;
 const motionToggle=document.createElement('button');
 motionToggle.type='button';motionToggle.className='motion-toggle';
-document.querySelector('.hero-heading').append(motionToggle);
+document.querySelector('.hero-heading')?.append(motionToggle);
 function syncMotion(){
  document.documentElement.dataset.motion=motionEnabled?'on':'off';
  motionToggle.textContent=motionEnabled?'Animaatiot päällä · pysäytä':'Animaatiot pois · käynnistä';
